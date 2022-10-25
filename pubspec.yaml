@@ -84,6 +84,9 @@ flutter:
     - assets/Cabaluna_Ruel_C.jpg
     - assets/Cabaluna_Roi _Jenver_B.jpg
     - assets/Cabaluna_Vergie_B.jpg
+    - assets/mem_prof1.png
+    - assets/mem_prof2.png
+    - assets/mem_prof3.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -4,6 +4,8 @@ import 'package:innovative_task_1_group_1/martinito/martinito_familia.dart';
 
 import 'cabaluna/cabaluna_details.dart';
 import 'cabaluna/cabaluna_details_display.dart';
+import 'dignadice/dignadice_details.dart';
+import 'dignadice/dignadice_details_display.dart';
 import 'maiso/maiso_fam_det.dart';
 import 'maiso/maiso_fam_det_disp.dart';
 import 'virtudes/virtudes_family_details.dart';
@@ -174,6 +176,30 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                                   CabalunaFamilyDisplayDetails(
                                       famDetails5)));
                 }),
+              );
+            },
+          ),
+          //aaaaaaaaaaaaaaaaa
+          ListView.builder(
+            itemCount: famList3.length,
+            itemBuilder: (context, index) {
+              DignadiceFamilyDetails famDetails3 = famList3[index];
+              return Card(
+                child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: (famDetails3.imageUrl),
+                    ),
+                    title: Text(famDetails3.name),
+                    subtitle: Text(famDetails3.relationship),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DignadiceFamilyDisplayDetails(
+                                      famDetails3)));
+                    }),
               );
             },
           )

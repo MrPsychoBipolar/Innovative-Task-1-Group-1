@@ -113,7 +113,7 @@ class VirtudesFamilyDisplayDetails extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(left: 2.0),
               ),
-              const Text('Birthday'),
+              const Text('Age'),
               const Padding(
                 padding: EdgeInsets.only(right: 87.0),
               ),

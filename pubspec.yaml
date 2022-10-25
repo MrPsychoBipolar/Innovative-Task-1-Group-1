@@ -69,6 +69,11 @@ flutter:
     - assets/Inato_Aubrey_V.png
     - assets/Virtudes_Dyna_D.png
     - assets/Virtudes_Nanli_Danvir.jpg
+    - assets/Martinito,_Dante_P.jpg
+    - assets/Martinito_Chene_A.jpg
+    - assets/Martinito_Kathryn_Leigh_A.jpg
+    - assets/Martinito_Kyla_Theresa_A.jpg
+    - assets/Martinito_Kim_Elizabeth_A.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

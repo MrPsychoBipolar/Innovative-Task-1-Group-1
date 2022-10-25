@@ -74,6 +74,12 @@ flutter:
     - assets/Martinito_Kathryn_Leigh_A.jpg
     - assets/Martinito_Kyla_Theresa_A.jpg
     - assets/Martinito_Kim_Elizabeth_A.jpg
+    - assets/Maiso_Liberato_E.jpg
+    - assets/Maiso_Bebinah_C.jpg
+    - assets/Maiso_Hazel_Grace_C.jpg
+    - assets/Maiso_Hyacinth_Grace_C.jpg
+    - assets/Maiso_Hydee_Grace_C.jpg
+    - assets/Maiso_John_Denver_C.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

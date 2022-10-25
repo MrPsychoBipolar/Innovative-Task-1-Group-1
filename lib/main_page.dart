@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_fam_disp.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_familia.dart';
 
+import 'maiso/maiso_fam_det.dart';
+import 'maiso/maiso_fam_det_disp.dart';
 import 'virtudes/virtudes_family_details.dart';
 import 'virtudes/virtudes_family_details_display.dart';
 
@@ -123,6 +125,29 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   MartinitoFamDisp(
                                       familia)));
+                    }),
+              );
+            },
+          ),
+          ListView.builder(
+            itemCount: famList2.length,
+            itemBuilder: (context, index) {
+              MaisoFamilyDetails famiDetails = famList2[index];
+              return Card(
+                child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: (famiDetails.picture),
+                    ),
+                    title: Text(famiDetails.name),
+                    subtitle: Text(famiDetails.relationship),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  MaisoFamilyDisplayDetails(
+                                      famiDetails)));
                     }),
               );
             },

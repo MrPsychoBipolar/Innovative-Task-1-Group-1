@@ -80,7 +80,10 @@ flutter:
     - assets/Maiso_Hyacinth_Grace_C.jpg
     - assets/Maiso_Hydee_Grace_C.jpg
     - assets/Maiso_John_Denver_C.jpg
-
+    - assets/Cabaluna_Wengel_Kate_B.jpg
+    - assets/Cabaluna_Ruel_C.jpg
+    - assets/Cabaluna_Roi _Jenver_B.jpg
+    - assets/Cabaluna_Vergie_B.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

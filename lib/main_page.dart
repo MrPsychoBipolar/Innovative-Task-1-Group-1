@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_fam_disp.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_familia.dart';
 
+import 'cabaluna/cabaluna_details.dart';
+import 'cabaluna/cabaluna_details_display.dart';
 import 'maiso/maiso_fam_det.dart';
 import 'maiso/maiso_fam_det_disp.dart';
 import 'virtudes/virtudes_family_details.dart';
@@ -102,7 +104,7 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   VirtudesFamilyDisplayDetails(
                                       famDetails)));
-                    }),
+                }),
               );
             },
           ),
@@ -125,7 +127,7 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   MartinitoFamDisp(
                                       familia)));
-                    }),
+                }),
               );
             },
           ),
@@ -148,7 +150,30 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   MaisoFamilyDisplayDetails(
                                       famiDetails)));
-                    }),
+                }),
+              );
+            },
+          ),
+          ListView.builder(
+            itemCount: famList5.length,
+            itemBuilder: (context, index) {
+              CabalunaFamilyDetails famDetails5 = famList5[index];
+              return Card(
+                child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: (famDetails5.imageUrl),
+                    ),
+                    title: Text(famDetails5.name),
+                    subtitle: Text(famDetails5.relationship),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  CabalunaFamilyDisplayDetails(
+                                      famDetails5)));
+                }),
               );
             },
           )

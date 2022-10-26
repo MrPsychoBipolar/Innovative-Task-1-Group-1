@@ -87,6 +87,9 @@ flutter:
     - assets/mem_prof1.png
     - assets/mem_prof2.png
     - assets/mem_prof3.png
+    - assets/Tirasol_Arnold_A..jpg
+    - assets/Tirasol_Dwyne_Kirk_B..jpg
+    - assets/Tirasol_Jean_B..jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

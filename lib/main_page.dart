@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_fam_disp.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_familia.dart';
+import 'package:innovative_task_1_group_1/tirasol/tirasol_mydet.dart';
+import 'package:innovative_task_1_group_1/tirasol/tirasol_mydet_disp.dart';
 
 import 'cabaluna/cabaluna_details.dart';
 import 'cabaluna/cabaluna_details_display.dart';
@@ -152,7 +154,30 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   MaisoFamilyDisplayDetails(
                                       famiDetails)));
-                }),
+                    }),
+              );
+            },
+          ),
+          ListView.builder(
+            itemCount: famList3.length,
+            itemBuilder: (context, index) {
+              TirasolFamilyDetails familDetails = famList3[index];
+              return Card(
+                child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: (familDetails.pics),
+                    ),
+                    title: Text(familDetails.name),
+                    subtitle: Text(familDetails.relationship),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  TirasolFamilyDisplayDetails(
+                                      familDetails)));
+                    }),
               );
             },
           ),
@@ -181,9 +206,9 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
           ),
           //aaaaaaaaaaaaaaaaa
           ListView.builder(
-            itemCount: famList3.length,
+            itemCount: famList4.length,
             itemBuilder: (context, index) {
-              DignadiceFamilyDetails famDetails3 = famList3[index];
+              DignadiceFamilyDetails famDetails3 = famList4[index];
               return Card(
                 child: ListTile(
                     leading: CircleAvatar(

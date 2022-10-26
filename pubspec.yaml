@@ -90,6 +90,13 @@ flutter:
     - assets/Tirasol_Arnold_A..jpg
     - assets/Tirasol_Dwyne_Kirk_B..jpg
     - assets/Tirasol_Jean_B..jpg
+    -  assets/Charcos_Arjay_A.jpg
+    - assets/Charcos_Arwen_A.jpg
+    - assets/Charcos_Ariel_A.jpg
+    - assets/Charcos_Archielyn_A.jpg
+    - assets/Charcos_Arlene_A.jpg
+    - assets/Charcos_Raul_G.jpg
+    - assets/Borja_Arah_C.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

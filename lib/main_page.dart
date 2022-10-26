@@ -6,6 +6,8 @@ import 'package:innovative_task_1_group_1/tirasol/tirasol_mydet_disp.dart';
 
 import 'cabaluna/cabaluna_details.dart';
 import 'cabaluna/cabaluna_details_display.dart';
+import 'charcos/charcos_family_details.dart';
+import 'charcos/charcos_family_details_display.dart';
 import 'dignadice/dignadice_details.dart';
 import 'dignadice/dignadice_details_display.dart';
 import 'maiso/maiso_fam_det.dart';
@@ -224,6 +226,29 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               builder: (context) =>
                                   DignadiceFamilyDisplayDetails(
                                       famDetails3)));
+                    }),
+              );
+            },
+          ),
+          ListView.builder(
+            itemCount: famList7.length,
+            itemBuilder: (context, index) {
+              CharcosFamilyDetails famDetails7 = famList7[index];
+              return Card(
+                child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: (famDetails7.imageUrl),
+                    ),
+                    title: Text(famDetails7.name),
+                    subtitle: Text(famDetails7.relationship),
+                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  CharcosFamilyDisplayDetails(
+                                      famDetails7)));
                     }),
               );
             },

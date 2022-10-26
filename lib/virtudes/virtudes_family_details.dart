@@ -22,7 +22,7 @@ List<VirtudesFamilyDetails> famList1 = [
     imageUrl: const AssetImage('assets/Virtudes_Roy_P.png'),
   ),
   VirtudesFamilyDetails(
-    name: 'Emie C. Virtudes',
+    name: 'Emie D. Virtudes',
     relationship: 'Mother',
     occupation: 'Housewife',
     birthday: 'December 9, 1962',

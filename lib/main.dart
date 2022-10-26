@@ -8,6 +8,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     title: 'Practice',
     theme: ThemeData(
+      splashColor: Colors.blue,
       primarySwatch: Colors.blue,
     ),
     home: const PrimaryAppLayout(),

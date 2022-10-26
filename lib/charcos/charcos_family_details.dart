@@ -27,7 +27,7 @@ List<CharcosFamilyDetails> famList7 = [
     occupation: 'Sari-Sari Store Owner',
     birthday: 'January 23, 1972',
     age: 50,
-    imageUrl: const AssetImage('Charcos_Arlene_A.jpg'),
+    imageUrl: const AssetImage('assets/Charcos_Arlene_A.jpg'),
   ),
   CharcosFamilyDetails(
     name: 'Arah C. Borja',

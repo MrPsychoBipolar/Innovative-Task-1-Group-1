@@ -32,7 +32,7 @@ List<MaisoFamilyDetails> famList2 = [
   MaisoFamilyDetails(
     name: 'Hazel Grace C. Maiso',
     relationship: 'Sister',
-    occupation: 'Quality Manager at Smart Ecosystem Philippines, Inc.',
+    occupation: 'Quality Manager',
     birthday: 'October 22, 1999',
     age: 23,
     picture: const AssetImage('assets/Maiso_Hazel_Grace_C.jpg'),
@@ -56,7 +56,7 @@ List<MaisoFamilyDetails> famList2 = [
   MaisoFamilyDetails(
     name: 'John Denver C. Maiso',
     relationship: 'Me',
-    occupation: 'Quality Assurance at Remotasks',
+    occupation: 'Quality Assurance',
     birthday: 'November 08, 2000',
     age: 21,
     picture: const AssetImage('assets/Maiso_John_Denver_C.jpg'),

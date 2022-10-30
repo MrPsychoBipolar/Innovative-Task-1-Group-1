@@ -12,7 +12,7 @@ class MaisoFamilyDetails{
 
 }
 
-List<MaisoFamilyDetails> famList2 = [
+List<MaisoFamilyDetails> familyList3 = [
   MaisoFamilyDetails(
     name: 'Liberato E. Maiso',
     relationship: 'Father',

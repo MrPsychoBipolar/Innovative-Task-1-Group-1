@@ -38,7 +38,7 @@ List<VirtudesFamilyDetails> famList1 = [
     imageUrl: const AssetImage('assets/Parnell_Rowena_D.png'),
   ),
   VirtudesFamilyDetails(
-    name: 'Glitter Lovely V. Alindogan',
+    name: 'Glitter V. Alindogan',
     relationship: 'Sister',
     occupation: 'Housewife',
     birthday: 'October 22, 1989',

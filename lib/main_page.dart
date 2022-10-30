@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:innovative_task_1_group_1/martinito/martinito_fam_disp.dart';
-import 'package:innovative_task_1_group_1/martinito/martinito_familia.dart';
-import 'package:innovative_task_1_group_1/tirasol/tirasol_mydet.dart';
-import 'package:innovative_task_1_group_1/tirasol/tirasol_mydet_disp.dart';
-
+import 'package:innovative_task_1_group_1/martinito/martinito_family_details_display.dart';
+import 'package:innovative_task_1_group_1/martinito/martinito_family_details.dart';
+import 'package:innovative_task_1_group_1/tirasol/tirasol_family_details.dart';
+import 'package:innovative_task_1_group_1/tirasol/tirasol_family_details_display.dart';
 import 'cabaluna/cabaluna_details.dart';
 import 'cabaluna/cabaluna_details_display.dart';
 import 'charcos/charcos_family_details.dart';
 import 'charcos/charcos_family_details_display.dart';
 import 'dignadice/dignadice_details.dart';
 import 'dignadice/dignadice_details_display.dart';
-import 'maiso/maiso_fam_det.dart';
-import 'maiso/maiso_fam_det_disp.dart';
+import 'maiso/maiso_family_details.dart';
+import 'maiso/maiso_family_details_display.dart';
 import 'virtudes/virtudes_family_details.dart';
 import 'virtudes/virtudes_family_details_display.dart';
 
@@ -81,7 +80,10 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
           controller: tabController,
           tabs: const [
             Tab(
-              child: Text('Nanli', style: TextStyle(fontSize: 20,)),
+              child: Text('Nanli',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
             ),
             Tab(
               child: Text('Kyla', style: TextStyle(fontSize: 20)),
@@ -113,12 +115,15 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
         child: TabBarView(
           controller: tabController,
           children: [
+            //NANLI DANVIR D. VIRTUDES' LIST VIEW =====================================
+
             ListView.builder(
               itemCount: famList1.length,
               itemBuilder: (context, index) {
-                VirtudesFamilyDetails famDetails = famList1[index];
+                VirtudesFamilyDetails famDetails1 = famList1[index];
                 return Container(
-                  padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
                   child: Column(
                     children: [
                       Container(
@@ -128,8 +133,7 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               topRight: Radius.elliptical(70.0, 40.0),
                               bottomRight: Radius.elliptical(70.0, 40.0),
                               topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)
-                          ),
+                              bottomLeft: Radius.circular(40.0)),
                           boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
@@ -143,7 +147,7 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                               padding: const EdgeInsets.all(4.0),
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200,1),
+                                color: Color.fromRGBO(200, 162, 200, 1),
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.purple,
@@ -156,7 +160,7 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                                 padding: const EdgeInsets.all(3.0),
                                 decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221,160,221,1),
+                                  color: Color.fromRGBO(221, 160, 221, 1),
                                   boxShadow: <BoxShadow>[
                                     BoxShadow(
                                       color: Colors.black,
@@ -166,25 +170,26 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                                 ),
                                 child: CircleAvatar(
                                   radius: 20,
-                                  backgroundImage: (famDetails.imageUrl),
+                                  backgroundImage: (famDetails1.imageUrl),
                                 ),
                               ),
                             ),
                             title: Text(
-                              famDetails.name,
+                              famDetails1.name,
                               style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            subtitle: Text(famDetails.relationship),
-                            trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                            subtitle: Text(famDetails1.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
                                           VirtudesFamilyDisplayDetails(
-                                              famDetails)));
+                                              famDetails1)));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -193,230 +198,508 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                 );
               },
             ),
+
+            //  KYLA MARTINITO'S LIST VIEW =====================================
+
             ListView.builder(
-              itemCount: mFam.length,
+              itemCount: familyList2.length,
               itemBuilder: (context, index) {
-                MartinitoFamilia familia = mFam[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                MartinitoFamilia famDetails2 = familyList2[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: (familia.photo),
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails2.photo),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails2.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),),
+                            subtitle: Text(famDetails2.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MartinitoFamDisp(famDetails2)));
+                            }),
                       ),
-                      title: Text(familia.name),
-                      subtitle: Text(familia.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    MartinitoFamDisp(familia)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
             ),
+
+            // JOHN DENVER MAISO'S LISTVIEW =====================================
+
             ListView.builder(
-              itemCount: famList2.length,
+              itemCount: familyList3.length,
               itemBuilder: (context, index) {
-                MaisoFamilyDetails famiDetails = famList2[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                MaisoFamilyDetails famDetails3 = familyList3[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: (famiDetails.picture),
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails3.picture),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails3.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            subtitle: Text(famDetails3.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MaisoFamilyDisplayDetails(
+                                              famDetails3)));
+                            }),
                       ),
-                      title: Text(famiDetails.name),
-                      subtitle: Text(famiDetails.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    MaisoFamilyDisplayDetails(famiDetails)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
             ),
+
+            // DWYNE KIRK B. TIRASOL'S LIST VIEW =====================================
+
             ListView.builder(
-              itemCount: famList3.length,
+              itemCount: familyList4.length,
               itemBuilder: (context, index) {
-                TirasolFamilyDetails familDetails = famList3[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                TirasolFamilyDetails famDetails4 = familyList4[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: (familDetails.pics),
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails4.pics),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails4.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            subtitle: Text(famDetails4.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          TirasolFamilyDisplayDetails(
+                                              famDetails4)));
+                            }),
                       ),
-                      title: Text(familDetails.name),
-                      subtitle: Text(familDetails.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    TirasolFamilyDisplayDetails(familDetails)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
             ),
+
+            // ROI JENVER B. CABALUNA'S LIST VIEW ===============================================
+
             ListView.builder(
-              itemCount: famList5.length,
+              itemCount: familyList5.length,
               itemBuilder: (context, index) {
-                CabalunaFamilyDetails famDetails5 = famList5[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                CabalunaFamilyDetails famDetails5 = familyList5[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: (famDetails5.imageUrl),
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails5.imageUrl),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails5.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            subtitle: Text(famDetails5.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CabalunaFamilyDisplayDetails(
+                                              famDetails5)));
+                            }),
                       ),
-                      title: Text(famDetails5.name),
-                      subtitle: Text(famDetails5.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    CabalunaFamilyDisplayDetails(famDetails5)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
             ),
-            //
+
+            // JAMES HANS BARON DIGNADICE'S LIST VIEW =====================================
+
             ListView.builder(
-              itemCount: famList4.length,
+              itemCount: familyList6.length,
               itemBuilder: (context, index) {
-                DignadiceFamilyDetails famDetails3 = famList4[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                DignadiceFamilyDetails famDetails6 = familyList6[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: (famDetails3.imageUrl),
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails6.imageUrl),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails6.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            subtitle: Text(famDetails6.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          DignadiceFamilyDisplayDetails(
+                                              famDetails6)));
+                            }),
                       ),
-                      title: Text(famDetails3.name),
-                      subtitle: Text(famDetails3.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    DignadiceFamilyDisplayDetails(
-                                        famDetails3)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
             ),
+
+            //ARJAY AUDIENCIA CHARCOS' LIST VIEW ===============================
+
             ListView.builder(
-              itemCount: famList7.length,
+              itemCount: familyList7.length,
               itemBuilder: (context, index) {
-                CharcosFamilyDetails famDetails7 = famList7[index];
-                return Card(
-                  child: ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.black38),
-                          shape: BoxShape.circle,
-                          color: Colors.transparent,
-                          boxShadow: const <BoxShadow>[
+                CharcosFamilyDetails famDetails7 = familyList7[index];
+                return Container(
+                  padding:
+                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(255, 229, 180, 0.5),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.elliptical(70.0, 40.0),
+                              bottomRight: Radius.elliptical(70.0, 40.0),
+                              topLeft: Radius.circular(40.0),
+                              bottomLeft: Radius.circular(40.0)),
+                          boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.black54,
                               offset: Offset(2.0, 4.0),
-                              blurRadius: 8.0,
+                              blurRadius: 2,
                             ),
                           ],
                         ),
-                        child: CircleAvatar(
-                          backgroundImage: (famDetails7.imageUrl),
-                          radius: 30,
-                        ),
+                        child: ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(4.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(200, 162, 200, 1),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.purple,
+                                    offset: Offset(2.0, 4.0),
+                                    blurRadius: 8.0,
+                                  ),
+                                ],
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(3.0),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(221, 160, 221, 1),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: (famDetails7.imageUrl),
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              famDetails7.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            subtitle: Text(famDetails7.relationship),
+                            trailing:
+                                const Icon(Icons.arrow_forward_ios_rounded),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CharcosFamilyDisplayDetails(
+                                              famDetails7)));
+                            }),
                       ),
-                      title: Text(famDetails7.name),
-                      subtitle: Text(famDetails7.relationship),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    CharcosFamilyDisplayDetails(famDetails7)));
-                      }),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 );
               },
-            )
+            ),
           ],
         ),
       ),

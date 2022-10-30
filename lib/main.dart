@@ -10,6 +10,7 @@ void main() {
     theme: ThemeData(
       splashColor: Colors.blue,
       primarySwatch: Colors.blue,
+
     ),
     home: const PrimaryAppLayout(),
   )

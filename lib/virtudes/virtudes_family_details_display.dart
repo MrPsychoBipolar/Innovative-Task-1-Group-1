@@ -6,144 +6,268 @@ class VirtudesFamilyDisplayDetails extends StatelessWidget {
 
   const VirtudesFamilyDisplayDetails(this.famDetails, {super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(famDetails.name),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/poly_wallpaper.jpg'),
-              fit: BoxFit.cover),
+    return Stack(
+      children: [
+        Scaffold(
+          appBar: AppBar(
+            title: Text(famDetails.name),
+          ),
+          body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/poly_wallpaper.jpg'),
+                  fit: BoxFit.cover),
+            ),
+          ),
         ),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            Center(
-              child: Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: Colors.black54,
-                      offset: Offset(2.0, 4.0),
-                      blurRadius: 8.0,
-                    ),
+        Positioned(
+          top: 250,
+          left: 10,
+          height: 400,
+          width: 390,
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(10.0),
+                  bottomRight: Radius.elliptical(170.0, 170.0),
+                  topLeft: Radius.circular(10.0),
+                  bottomLeft: Radius.circular(10.0)),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+
+                    Color.fromRGBO(221, 214, 243, 1.0),
+                    Color.fromRGBO(250, 172, 168, 1.0),
                   ],
                 ),
-                child: CircleAvatar(
-                  radius: 100,
-                  backgroundImage: (famDetails.imageUrl),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black54,
+                  offset: Offset(4.0, 6.0),
+                  blurRadius: 8.0,
                 ),
-              ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-              decoration: const BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(width: 2, color: Colors.grey))),
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 2.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 40),
+                Container(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  margin:
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.grey)),
                   ),
-                  const Text('Name'),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 100.0),
+                  child: Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 2.0),
+                      ),
+                      const Text(
+                        'Name',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 80.0),
+                      ),
+                      Text(':${famDetails.name}',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),),
+                    ],
                   ),
-                  Text(':${famDetails.name}'),
-                ],
-              ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  margin:
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.grey)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 2.0),
+                      ),
+                      const Text(
+                        'Relationship',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 18.0),
+                      ),
+                      Text(':${famDetails.relationship}',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  margin:
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.grey)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 2.0),
+                      ),
+                      const Text(
+                        'Occupation',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 34.0),
+                      ),
+                      Text(':${famDetails.occupation}',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  margin:
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.grey)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 2.0),
+                      ),
+                      const Text(
+                        'Birthday',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 50.0),
+                      ),
+                      Text(':${famDetails.birthday}',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  margin:
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.grey)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 2.0),
+                      ),
+                      const Text(
+                        'Age',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 88.0),
+                      ),
+                      Text(':${famDetails.age}',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black87,
+                          decoration: TextDecoration.none,
+                        ),),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-              decoration: const BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(width: 2, color: Colors.grey))),
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 2.0),
-                  ),
-                  const Text('Relationship'),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 61.0),
-                  ),
-                  Text(': ${famDetails.relationship}'),
-                ],
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-              decoration: const BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(width: 2, color: Colors.grey))),
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 2.0),
-                  ),
-                  const Text('Occupation'),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 66.0),
-                  ),
-                  Text(': ${famDetails.occupation}'),
-                ],
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-              decoration: const BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(width: 2, color: Colors.grey))),
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 2.0),
-                  ),
-                  const Text('Birthday'),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 87.0),
-                  ),
-                  Text(': ${famDetails.birthday}'),
-                ],
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-              decoration: const BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(width: 2, color: Colors.grey))),
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 2.0),
-                  ),
-                  const Text('Age'),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 114.0),
-                  ),
-                  Text(': ${famDetails.age}'),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+          top: 100,
+          left: 100,
+          child: Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.blue,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black54,
+                  offset: Offset(2.0, 4.0),
+                  blurRadius: 8.0,
+                ),
+              ],
+            ),
+            child: CircleAvatar(
+              radius: 100,
+              backgroundImage: (famDetails.imageUrl),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 570,
+          left: 300,
+          height: 100,
+          width: 100,
+          child: Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.blue,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black54,
+                  offset: Offset(2.0, 4.0),
+                  blurRadius: 8.0,
+                ),
+              ],
+            ),
+            child: const CircleAvatar(
+              radius: 100,
+              backgroundImage: AssetImage('assets/logo.png'),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

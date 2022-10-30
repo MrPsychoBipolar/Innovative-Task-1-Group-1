@@ -12,7 +12,7 @@ class CabalunaFamilyDetails{
 
 }
 
-List<CabalunaFamilyDetails> famList5 = [
+List<CabalunaFamilyDetails> familyList5 = [
   CabalunaFamilyDetails(
     name: 'Ruel C. Cabaluna',
     relationship: 'Father',

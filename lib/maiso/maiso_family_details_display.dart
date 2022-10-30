@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:innovative_task_1_group_1/dignadice/dignadice_details.dart';
+import 'package:innovative_task_1_group_1/maiso/maiso_family_details.dart';
 
+class MaisoFamilyDisplayDetails extends StatelessWidget {
+  final MaisoFamilyDetails famDetails3;
 
-class DignadiceFamilyDisplayDetails extends StatelessWidget {
-  final DignadiceFamilyDetails famDetails6;
-
-  const DignadiceFamilyDisplayDetails(this.famDetails6, {super.key});
+  const MaisoFamilyDisplayDetails(this.famDetails3, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: Text(famDetails6.name),
+            title: Text(famDetails3.name),
           ),
           body: Container(
             decoration: const BoxDecoration(
@@ -39,7 +38,6 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-
                   Color.fromRGBO(221, 214, 243, 1.0),
                   Color.fromRGBO(250, 172, 168, 1.0),
                 ],
@@ -77,9 +75,9 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(right: 80.0),
+                        padding: EdgeInsets.only(right: 81.0),
                       ),
-                      Text(':${famDetails6.name}',
+                      Text(':${famDetails3.name}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
@@ -110,9 +108,9 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(right: 18.0),
+                        padding: EdgeInsets.only(right: 19.0),
                       ),
-                      Text(':${famDetails6.relationship}',
+                      Text(':${famDetails3.relationship}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
@@ -145,7 +143,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 34.0),
                       ),
-                      Text(':${famDetails6.occupation}',
+                      Text(':${famDetails3.occupation}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
@@ -178,7 +176,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 50.0),
                       ),
-                      Text(':${famDetails6.birthday}',
+                      Text(':${famDetails3.birthday}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
@@ -211,7 +209,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 88.0),
                       ),
-                      Text(':${famDetails6.age}',
+                      Text(':${famDetails3.age}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
@@ -241,7 +239,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
             ),
             child: CircleAvatar(
               radius: 100,
-              backgroundImage: (famDetails6.imageUrl),
+              backgroundImage: (famDetails3.picture),
             ),
           ),
         ),

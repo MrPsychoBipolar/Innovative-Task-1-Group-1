@@ -12,7 +12,7 @@ class DignadiceFamilyDetails{
 
 }
 
-List<DignadiceFamilyDetails> famList4 = [
+List<DignadiceFamilyDetails> familyList6 = [
   DignadiceFamilyDetails(
     name: 'Jaime',
     relationship: 'Father',

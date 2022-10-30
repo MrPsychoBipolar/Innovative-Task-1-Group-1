@@ -12,7 +12,7 @@ class CharcosFamilyDetails{
 
 }
 
-List<CharcosFamilyDetails> famList7 = [
+List<CharcosFamilyDetails> familyList7 = [
   CharcosFamilyDetails(
     name: 'Raul G. Charcos',
     relationship: 'Father',

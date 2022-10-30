@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:innovative_task_1_group_1/dignadice/dignadice_details.dart';
+import 'package:innovative_task_1_group_1/martinito/martinito_family_details.dart';
 
+class MartinitoFamDisp extends StatelessWidget {
+  final MartinitoFamilia famDetails2;
 
-class DignadiceFamilyDisplayDetails extends StatelessWidget {
-  final DignadiceFamilyDetails famDetails6;
-
-  const DignadiceFamilyDisplayDetails(this.famDetails6, {super.key});
+  const MartinitoFamDisp(this.famDetails2, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: Text(famDetails6.name),
+            title: Text(famDetails2.name),
           ),
           body: Container(
             decoration: const BoxDecoration(
@@ -39,7 +38,6 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-
                   Color.fromRGBO(221, 214, 243, 1.0),
                   Color.fromRGBO(250, 172, 168, 1.0),
                 ],
@@ -56,9 +54,10 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
               children: [
                 const SizedBox(height: 40),
                 Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
                   margin:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
                         bottom: BorderSide(width: 2, color: Colors.grey)),
@@ -77,21 +76,24 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(right: 80.0),
+                        padding: EdgeInsets.only(right: 81.0),
                       ),
-                      Text(':${famDetails6.name}',
+                      Text(
+                        ':${famDetails2.name}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
                           decoration: TextDecoration.none,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
                   margin:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
                         bottom: BorderSide(width: 2, color: Colors.grey)),
@@ -110,21 +112,24 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(right: 18.0),
+                        padding: EdgeInsets.only(right: 19.0),
                       ),
-                      Text(':${famDetails6.relationship}',
+                      Text(
+                        ':${famDetails2.relationship}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
                           decoration: TextDecoration.none,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
                   margin:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
                         bottom: BorderSide(width: 2, color: Colors.grey)),
@@ -145,19 +150,22 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 34.0),
                       ),
-                      Text(':${famDetails6.occupation}',
+                      Text(
+                        ':${famDetails2.work}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
                           decoration: TextDecoration.none,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
                   margin:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
                         bottom: BorderSide(width: 2, color: Colors.grey)),
@@ -178,19 +186,22 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 50.0),
                       ),
-                      Text(':${famDetails6.birthday}',
+                      Text(
+                        ':${famDetails2.bday}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
                           decoration: TextDecoration.none,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, right: 10.0, bottom: 10.0, top: 10.0),
                   margin:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
                         bottom: BorderSide(width: 2, color: Colors.grey)),
@@ -211,12 +222,14 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(right: 88.0),
                       ),
-                      Text(':${famDetails6.age}',
+                      Text(
+                        ':${famDetails2.age}',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black87,
                           decoration: TextDecoration.none,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -241,7 +254,7 @@ class DignadiceFamilyDisplayDetails extends StatelessWidget {
             ),
             child: CircleAvatar(
               radius: 100,
-              backgroundImage: (famDetails6.imageUrl),
+              backgroundImage: (famDetails2.photo),
             ),
           ),
         ),

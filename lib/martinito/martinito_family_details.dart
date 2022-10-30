@@ -12,7 +12,7 @@ class MartinitoFamilia{
 
 }
 
-List<MartinitoFamilia> mFam = [
+List<MartinitoFamilia> familyList2 = [
   MartinitoFamilia(
     name: 'Dante P. Martinito',
     relationship: 'Father',

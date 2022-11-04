@@ -12,6 +12,7 @@ class VirtudesFamilyDisplayDetails extends StatelessWidget {
       children: [
         Scaffold(
           appBar: AppBar(
+            backgroundColor: const Color.fromRGBO(6, 25, 84, 1.0),
             title: Text(famDetails.name),
           ),
           body: Container(
@@ -60,7 +61,11 @@ class VirtudesFamilyDisplayDetails extends StatelessWidget {
                       const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                   decoration: const BoxDecoration(
                     border: Border(
-                        bottom: BorderSide(width: 2, color: Colors.grey)),
+                        bottom: BorderSide(
+                            width: 2,
+                            color: Colors.grey,
+                        ),
+                    ),
                   ),
                   child: Row(
                     children: [

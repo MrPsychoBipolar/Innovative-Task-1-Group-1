@@ -12,6 +12,7 @@ class CharcosFamilyDisplayDetails extends StatelessWidget {
       children: [
         Scaffold(
           appBar: AppBar(
+            backgroundColor: const Color.fromRGBO(6, 25, 84, 1.0),
             title: Text(famDetails7.name),
           ),
           body: Container(

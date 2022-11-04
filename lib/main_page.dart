@@ -35,25 +35,22 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: const Color.fromRGBO(3, 168, 243, 1.0),
         leading: Container(
-          decoration: BoxDecoration(
-            border: Border.all(width: 5.0, color: Colors.lightBlue),
+          margin: const EdgeInsets.only(left: 4.0, top: 4.0, bottom: 4.0),
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.black54,
+                offset: Offset(1.0, 2.0),
+                blurRadius: 2.0,
+              ),
+            ],
           ),
-          child: Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Colors.black54,
-                  offset: Offset(1.0, 2.0),
-                  blurRadius: 2.0,
-                ),
-              ],
-            ),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/logo.png'),
-            ),
+          child: const CircleAvatar(
+            backgroundImage: AssetImage('assets/logo.png'),
+
           ),
         ),
         title: RichText(
@@ -61,6 +58,18 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
           text: const TextSpan(
               text: 'Innovative task 1',
               style: TextStyle(
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(4.0, 2.0),
+                    blurRadius: 2.0,
+                    color: Color.fromRGBO(0, 62, 199, 0.9),
+                  ),
+                  Shadow(
+                    offset: Offset(4.0, 2.0),
+                    blurRadius: 2.0,
+                    color: Color.fromRGBO(0, 0, 0, 0.4),
+                  ),
+                ],
                 fontWeight: FontWeight.bold,
                 fontSize: 23,
                 color: Colors.white,
@@ -76,32 +85,32 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
               ]),
         ),
         bottom: TabBar(
+          indicatorColor: Colors.pink,
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.black54,
           isScrollable: true,
           controller: tabController,
           tabs: const [
             Tab(
-              child: Text('Nanli',
-                  style: TextStyle(
-                    fontSize: 20,
-                  )),
+              child: Text('Nanli Virtudes', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('Kyla', style: TextStyle(fontSize: 20)),
+              child: Text('Kyla Martinito', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('Denver', style: TextStyle(fontSize: 20)),
+              child: Text('Denver Maiso', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('Dwyne', style: TextStyle(fontSize: 20)),
+              child: Text('Dwyne Tirasol', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('Roi', style: TextStyle(fontSize: 20)),
+              child: Text('Roi Cabaluna', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('James', style: TextStyle(fontSize: 20)),
+              child: Text('James Dignadice', style: TextStyle(fontSize: 20)),
             ),
             Tab(
-              child: Text('Arjay', style: TextStyle(fontSize: 20)),
+              child: Text('Arjay Charcos', style: TextStyle(fontSize: 20)),
             ),
           ],
         ),
@@ -127,47 +136,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails1.imageUrl),
@@ -177,19 +153,46 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails1.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails1.relationship),
+                            subtitle: Text(
+                              famDetails1.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          VirtudesFamilyDisplayDetails(
-                                              famDetails1)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut,
+                                        );
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return VirtudesFamilyDisplayDetails(
+                                            famDetails1);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -211,47 +214,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails2.photo),
@@ -261,17 +231,43 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails2.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                              ),),
-                            subtitle: Text(famDetails2.relationship),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
+                              ),
+                            ),
+                            subtitle: Text(famDetails2.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          MartinitoFamDisp(famDetails2)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return MartinitoFamDisp(famDetails2);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -293,47 +289,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails3.picture),
@@ -343,19 +306,44 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails3.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails3.relationship),
+                            subtitle: Text(famDetails3.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          MaisoFamilyDisplayDetails(
-                                              famDetails3)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return MaisoFamilyDisplayDetails(
+                                            famDetails3);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -377,47 +365,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails4.pics),
@@ -427,19 +382,44 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails4.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails4.relationship),
+                            subtitle: Text(famDetails4.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          TirasolFamilyDisplayDetails(
-                                              famDetails4)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return TirasolFamilyDisplayDetails(
+                                            famDetails4);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -461,47 +441,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails5.imageUrl),
@@ -511,19 +458,44 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails5.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails5.relationship),
+                            subtitle: Text(famDetails5.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          CabalunaFamilyDisplayDetails(
-                                              famDetails5)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return CabalunaFamilyDisplayDetails(
+                                            famDetails5);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -545,47 +517,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails6.imageUrl),
@@ -595,19 +534,44 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails6.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails6.relationship),
+                            subtitle: Text(famDetails6.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          DignadiceFamilyDisplayDetails(
-                                              famDetails6)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return DignadiceFamilyDisplayDetails(
+                                            famDetails6);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -629,47 +593,14 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                   child: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(255, 229, 180, 0.5),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.elliptical(70.0, 40.0),
-                              bottomRight: Radius.elliptical(70.0, 40.0),
-                              topLeft: Radius.circular(40.0),
-                              bottomLeft: Radius.circular(40.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(2.0, 4.0),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
+                        decoration: listTileBoxDecoration(),
                         child: ListTile(
                             leading: Container(
                               padding: const EdgeInsets.all(4.0),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(200, 162, 200, 1),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                    color: Colors.purple,
-                                    offset: Offset(2.0, 4.0),
-                                    blurRadius: 8.0,
-                                  ),
-                                ],
-                              ),
+                              decoration: circleAvatar1stContainerDesign(),
                               child: Container(
                                 padding: const EdgeInsets.all(3.0),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(221, 160, 221, 1),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 2.0,
-                                    ),
-                                  ],
-                                ),
+                                decoration: circleAvatar2ndContainerDesign(),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: (famDetails7.imageUrl),
@@ -679,19 +610,44 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
                             title: Text(
                               famDetails7.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
                               ),
                             ),
-                            subtitle: Text(famDetails7.relationship),
+                            subtitle: Text(famDetails7.relationship,
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
                             trailing:
                                 const Icon(Icons.arrow_forward_ios_rounded),
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          CharcosFamilyDisplayDetails(
-                                              famDetails7)));
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          const Duration(seconds: 1),
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) {
+                                        return CharcosFamilyDisplayDetails(
+                                            famDetails7);
+                                      }));
                             }),
                       ),
                       const SizedBox(height: 10),
@@ -705,4 +661,56 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
       ),
     );
   }
+}
+
+BoxDecoration listTileBoxDecoration() {
+  return const BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color.fromRGBO(221, 214, 243, 0.8),
+        Color.fromRGBO(250, 172, 168, 0.8),
+      ],
+    ),
+    borderRadius: BorderRadius.only(
+        topRight: Radius.elliptical(70.0, 40.0),
+        bottomRight: Radius.elliptical(70.0, 40.0),
+        topLeft: Radius.circular(40.0),
+        bottomLeft: Radius.circular(40.0)),
+    boxShadow: <BoxShadow>[
+      BoxShadow(
+        color: Colors.black54,
+        offset: Offset(2.0, 4.0),
+        blurRadius: 2,
+      ),
+    ],
+  );
+}
+
+BoxDecoration circleAvatar1stContainerDesign() {
+  return const BoxDecoration(
+    shape: BoxShape.circle,
+    color: Color.fromRGBO(200, 162, 200, 1),
+    boxShadow: <BoxShadow>[
+      BoxShadow(
+        color: Colors.purple,
+        offset: Offset(2.0, 4.0),
+        blurRadius: 8.0,
+      ),
+    ],
+  );
+}
+
+BoxDecoration circleAvatar2ndContainerDesign() {
+  return const BoxDecoration(
+    shape: BoxShape.circle,
+    color: Color.fromRGBO(221, 160, 221, 1),
+    boxShadow: <BoxShadow>[
+      BoxShadow(
+        color: Colors.black,
+        blurRadius: 2.0,
+      ),
+    ],
+  );
 }

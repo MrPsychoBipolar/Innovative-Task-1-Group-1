@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'main_page.dart';
+import 'loading_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -12,7 +12,7 @@ void main() {
       primarySwatch: Colors.blue,
 
     ),
-    home: const PrimaryAppLayout(),
+    home: const LoadingScreen(),
   )
   );
 }

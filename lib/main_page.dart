@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:innovative_task_1_group_1/martinito/martinito_family_details_display.dart';
+import 'package:innovative_task_1_group_1/cabaluna/cabaluna_details.dart';
+import 'package:innovative_task_1_group_1/cabaluna/cabaluna_details_display.dart';
+import 'package:innovative_task_1_group_1/charcos/charcos_family_details.dart';
+import 'package:innovative_task_1_group_1/charcos/charcos_family_details_display.dart';
+import 'package:innovative_task_1_group_1/dignadice/dignadice_details.dart';
+import 'package:innovative_task_1_group_1/dignadice/dignadice_details_display.dart';
+import 'package:innovative_task_1_group_1/maiso/maiso_family_details.dart';
+import 'package:innovative_task_1_group_1/maiso/maiso_family_details_display.dart';
 import 'package:innovative_task_1_group_1/martinito/martinito_family_details.dart';
+import 'package:innovative_task_1_group_1/martinito/martinito_family_details_display.dart';
 import 'package:innovative_task_1_group_1/tirasol/tirasol_family_details.dart';
 import 'package:innovative_task_1_group_1/tirasol/tirasol_family_details_display.dart';
-import 'cabaluna/cabaluna_details.dart';
-import 'cabaluna/cabaluna_details_display.dart';
-import 'charcos/charcos_family_details.dart';
-import 'charcos/charcos_family_details_display.dart';
-import 'dignadice/dignadice_details.dart';
-import 'dignadice/dignadice_details_display.dart';
-import 'maiso/maiso_family_details.dart';
-import 'maiso/maiso_family_details_display.dart';
-import 'virtudes/virtudes_family_details.dart';
-import 'virtudes/virtudes_family_details_display.dart';
+import 'package:innovative_task_1_group_1/virtudes/virtudes_family_details.dart';
+import 'package:innovative_task_1_group_1/virtudes/virtudes_family_details_display.dart';
 
 class PrimaryAppLayout extends StatefulWidget {
   const PrimaryAppLayout({Key? key}) : super(key: key);
@@ -50,7 +50,6 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
           ),
           child: const CircleAvatar(
             backgroundImage: AssetImage('assets/logo.png'),
-
           ),
         ),
         title: RichText(
@@ -92,25 +91,60 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
           controller: tabController,
           tabs: const [
             Tab(
-              child: Text('Nanli Virtudes', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Nanli Virtudes',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('Kyla Martinito', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Kyla Martinito',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('Denver Maiso', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Denver Maiso',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('Dwyne Tirasol', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Dwyne Tirasol',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('Roi Cabaluna', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Roi Cabaluna',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('James Dignadice', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'James Dignadice',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
             Tab(
-              child: Text('Arjay Charcos', style: TextStyle(fontSize: 20)),
+              child: Text(
+                'Arjay Charcos',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
           ],
         ),
@@ -124,543 +158,530 @@ class _PrimaryAppLayoutState extends State<PrimaryAppLayout>
         child: TabBarView(
           controller: tabController,
           children: [
-            //NANLI DANVIR D. VIRTUDES' LIST VIEW =====================================
-
-            ListView.builder(
-              itemCount: famList1.length,
-              itemBuilder: (context, index) {
-                VirtudesFamilyDetails famDetails1 = famList1[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails1.imageUrl),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails1.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(
-                              famDetails1.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut,
-                                        );
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return VirtudesFamilyDisplayDetails(
-                                            famDetails1);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
+            //NANLI DANVIR D. VIRTUDES' LIST VIEW ==============================
+            virtudesListView(),
             //  KYLA MARTINITO'S LIST VIEW =====================================
-
-            ListView.builder(
-              itemCount: familyList2.length,
-              itemBuilder: (context, index) {
-                MartinitoFamilia famDetails2 = familyList2[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails2.photo),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails2.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails2.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return MartinitoFamDisp(famDetails2);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
-            // JOHN DENVER MAISO'S LISTVIEW =====================================
-
-            ListView.builder(
-              itemCount: familyList3.length,
-              itemBuilder: (context, index) {
-                MaisoFamilyDetails famDetails3 = familyList3[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails3.picture),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails3.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails3.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return MaisoFamilyDisplayDetails(
-                                            famDetails3);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
-            // DWYNE KIRK B. TIRASOL'S LIST VIEW =====================================
-
-            ListView.builder(
-              itemCount: familyList4.length,
-              itemBuilder: (context, index) {
-                TirasolFamilyDetails famDetails4 = familyList4[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails4.pics),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails4.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails4.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return TirasolFamilyDisplayDetails(
-                                            famDetails4);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
-            // ROI JENVER B. CABALUNA'S LIST VIEW ===============================================
-
-            ListView.builder(
-              itemCount: familyList5.length,
-              itemBuilder: (context, index) {
-                CabalunaFamilyDetails famDetails5 = familyList5[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails5.imageUrl),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails5.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails5.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return CabalunaFamilyDisplayDetails(
-                                            famDetails5);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
-            // JAMES HANS BARON DIGNADICE'S LIST VIEW =====================================
-
-            ListView.builder(
-              itemCount: familyList6.length,
-              itemBuilder: (context, index) {
-                DignadiceFamilyDetails famDetails6 = familyList6[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails6.imageUrl),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails6.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails6.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return DignadiceFamilyDisplayDetails(
-                                            famDetails6);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
-
+            martinitoListView(),
+            // JOHN DENVER MAISO'S LISTVIEW ====================================
+            maisoListView(),
+            // DWYNE KIRK B. TIRASOL'S LIST VIEW ===============================
+            tirasolListView(),
+            // ROI JENVER B. CABALUNA'S LIST VIEW ==============================
+            cabalunaListView(),
+            // JAMES HANS BARON DIGNADICE'S LIST VIEW ==========================
+            dignadiceListView(),
             //ARJAY AUDIENCIA CHARCOS' LIST VIEW ===============================
-
-            ListView.builder(
-              itemCount: familyList7.length,
-              itemBuilder: (context, index) {
-                CharcosFamilyDetails famDetails7 = familyList7[index];
-                return Container(
-                  padding:
-                      const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: listTileBoxDecoration(),
-                        child: ListTile(
-                            leading: Container(
-                              padding: const EdgeInsets.all(4.0),
-                              decoration: circleAvatar1stContainerDesign(),
-                              child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: circleAvatar2ndContainerDesign(),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: (famDetails7.imageUrl),
-                                ),
-                              ),
-                            ),
-                            title: Text(
-                              famDetails7.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20,
-                              ),
-                            ),
-                            subtitle: Text(famDetails7.relationship,
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                            trailing:
-                                const Icon(Icons.arrow_forward_ios_rounded),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionDuration:
-                                          const Duration(seconds: 1),
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) {
-                                        return CharcosFamilyDisplayDetails(
-                                            famDetails7);
-                                      }));
-                            }),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
-                  ),
-                );
-              },
-            ),
+            charcosListView(),
           ],
         ),
       ),
     );
   }
+}
+
+ListView virtudesListView() {
+  return ListView.builder(
+    itemCount: famList1.length,
+    itemBuilder: (context, index) {
+      VirtudesFamilyDetails famDetails1 = famList1[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails1.imageUrl),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails1.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails1.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                parent: animation,
+                                curve: Curves.elasticInOut,
+                              );
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return VirtudesFamilyDisplayDetails(famDetails1);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView martinitoListView() {
+  return ListView.builder(
+    itemCount: familyList2.length,
+    itemBuilder: (context, index) {
+      MartinitoFamilia famDetails2 = familyList2[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails2.photo),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails2.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails2.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return MartinitoFamDisp(famDetails2);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView maisoListView() {
+  return ListView.builder(
+    itemCount: familyList3.length,
+    itemBuilder: (context, index) {
+      MaisoFamilyDetails famDetails3 = familyList3[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails3.picture),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails3.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails3.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return MaisoFamilyDisplayDetails(famDetails3);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView tirasolListView() {
+  return ListView.builder(
+    itemCount: familyList4.length,
+    itemBuilder: (context, index) {
+      TirasolFamilyDetails famDetails4 = familyList4[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails4.pics),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails4.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails4.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return TirasolFamilyDisplayDetails(famDetails4);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView cabalunaListView() {
+  return ListView.builder(
+    itemCount: familyList5.length,
+    itemBuilder: (context, index) {
+      CabalunaFamilyDetails famDetails5 = familyList5[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails5.imageUrl),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails5.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails5.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return CabalunaFamilyDisplayDetails(famDetails5);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView dignadiceListView() {
+  return ListView.builder(
+    itemCount: familyList6.length,
+    itemBuilder: (context, index) {
+      DignadiceFamilyDetails famDetails6 = familyList6[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails6.imageUrl),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails6.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails6.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return DignadiceFamilyDisplayDetails(famDetails6);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+ListView charcosListView() {
+  return ListView.builder(
+    itemCount: familyList7.length,
+    itemBuilder: (context, index) {
+      CharcosFamilyDetails famDetails7 = familyList7[index];
+      return Container(
+        padding: const EdgeInsets.only(top: 6.0, left: 8.0, right: 8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: listTileBoxDecoration(),
+              child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: circleAvatar1stContainerDesign(),
+                    child: Container(
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: circleAvatar2ndContainerDesign(),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: (famDetails7.imageUrl),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    famDetails7.name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    famDetails7.relationship,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 1),
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut);
+
+                              return ScaleTransition(
+                                alignment: Alignment.center,
+                                scale: animation,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secondaryAnimation) {
+                              return CharcosFamilyDisplayDetails(famDetails7);
+                            }));
+                  }),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+    },
+  );
 }
 
 BoxDecoration listTileBoxDecoration() {

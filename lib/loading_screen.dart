@@ -37,18 +37,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
           ),
         ),
         Positioned(
-          top: 200,
-          left: 50,
-          height: 300,
-          width: 300,
+          height: (MediaQuery.of(context).size.height),
+          width: (MediaQuery.of(context).size.width),
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/logo.png'), fit: BoxFit.cover),
+                  image: AssetImage('assets/logo_1080.png'),fit: BoxFit.cover,),
             ),
           ),
         ),
-
       ],
     );
   }
